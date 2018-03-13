@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
-class SlideMenuController: SlideMenuController {
+
+class slideMenuController: SlideMenuController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,28 @@ class SlideMenuController: SlideMenuController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+
+    override func awakeFromNib() {
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "Main")
+        let leftVC = storyboard?.instantiateViewController(withIdentifier: "Left")
+        //UIViewControllerにはNavigationBarは無いためUINavigationControllerを生成しています。
+        let navigationController = UINavigationController(rootViewController: mainVC!)
+        //ライブラリ特有のプロパティにセット
+  
+        
+        
+        
+        
+        mainViewController = navigationController
+        leftViewController = leftVC
+        super.awakeFromNib()
+    }
+    
+    @objc func leftItemAction(){
+        print("우왕")
     }
     
 
