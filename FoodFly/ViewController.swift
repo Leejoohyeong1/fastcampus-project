@@ -21,6 +21,9 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         print("!111")
+           self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "sssss", style: .plain , target: self, action: nil)
+        
+        
         self.menuListScroll.delegate = self
         cataLogTitle.delegate = self
         cataLogTitle.dataSource = self
