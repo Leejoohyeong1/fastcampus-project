@@ -20,19 +20,20 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("!111")
         self.menuListScroll.delegate = self
         cataLogTitle.delegate = self
         cataLogTitle.dataSource = self
         self.cataLogTitle.showsHorizontalScrollIndicator = false
-        
+        self.menuListScroll.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("333333")
         self.menuListScroll.isPagingEnabled = true
         self.menuListScroll.contentSize = CGSize(width: self.menuListScroll.bounds.width * CGFloat(label.count), height: self.menuListScroll.frame.height)
-
+        
         
         for (index,content) in self.label.enumerated() {
             let testVC1 = self.storyboard?.instantiateViewController(withIdentifier: "sub") as! subViewController
@@ -44,6 +45,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
             testVC1.willMove(toParentViewController: self)
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,6 +73,10 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         let position = scrollView.contentOffset.x / view.frame.size.width
         let indexPath = IndexPath(item: Int(position), section: 0)
         cataLogTitle.scrollToItem(at: indexPath, at: .left, animated: true)
+        
     }
+    
+
+
 }
 
