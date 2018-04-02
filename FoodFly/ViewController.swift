@@ -9,17 +9,31 @@
 import UIKit
 import SlideMenuControllerSwift
 
-class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UIScrollViewDelegate{
+class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UIScrollViewDelegate, subViewControllerDelegate{
+    
+    func setCellValues(cell: CollectionMenuCell) -> CollectionMenuCell {
+        cell.menuTitle = "맥도날드"
+        cell.starPointValue = "4.5"
+        cell.menuKindValue = "햄버거"
+        cell.deliveryCostValue = "1,000"
+        cell.distanceCurrentLocationValue = "0.5Km"
+        cell.menuImgName = UIImage(named: "testMenu")
+        cell.minOrderCostValue = "5,000~"
+        return cell
+    }
+    
     
     
     @IBOutlet weak var cataLogTitle: UICollectionView!
-    
+//    @IBOutlet weak var menuListCollectionView: UICollectionView!
     @IBOutlet weak var menuListScroll: UIScrollView!
     
     
     var scrollview:CGRect?
     var label: [String] = ["전체","신규맛집","한식","일식","카페","양식","퓨전","분식","햄버거","치킨","중식","피자"]
     var opacityView:slideMenuController?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,18 +52,22 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     
     override func viewDidAppear(_ animated: Bool) {
         
+        
+        
+        
         self.menuListScroll.isPagingEnabled = true
         self.menuListScroll.contentSize = CGSize(width: self.menuListScroll.bounds.width * CGFloat(label.count), height: self.menuListScroll.frame.height)
         
         
-        for (index,content) in self.label.enumerated() {
-            let testVC1 = self.storyboard?.instantiateViewController(withIdentifier: "sub") as! subViewController
-            testVC1.view.frame = CGRect(x: 0, y: 0, width: self.menuListScroll.bounds.width , height: self.menuListScroll.frame.height)
-            testVC1._name?.text = content
-            testVC1.view.frame.origin = CGPoint(x: CGFloat(index) * self.menuListScroll.bounds.width , y: 0)
-            self.addChildViewController(testVC1)
-            self.menuListScroll.addSubview(testVC1.view)
-            testVC1.willMove(toParentViewController: self)
+        for (index,_) in self.label.enumerated() {
+           let menuCollectionView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sub") as! subViewController
+            menuCollectionView.view.frame = CGRect(x: 0, y: 0, width: self.menuListScroll.bounds.width, height: self.menuListScroll.frame.height)
+            menuCollectionView.view.frame.origin = CGPoint(x: CGFloat(index) * self.menuListScroll.bounds.width , y: 0)
+            menuCollectionView.delegate = self
+            
+            self.addChildViewController(menuCollectionView)
+            self.menuListScroll.addSubview(menuCollectionView.view)
+            menuCollectionView.willMove(toParentViewController: self)
         }
     }
     
@@ -74,18 +92,19 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         let x = CGFloat(indexPath.row) * menuListScroll.frame.size.width
         menuListScroll.setContentOffset(CGPoint(x: x,y :0), animated: true)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let text = NSAttributedString(string: label[indexPath.row])
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "catalogcell", for: <#T##IndexPath#>)
-            as! CatalogViewCell
-//        cell.CatalogName
-        
-        
-        let myAttribute = [ NSFontAttributeName: UIFont(name: "Chalkduster", size: 18.0)! ]
-        
-        
-        return CGSize(width: textWidth(font: cell.CatalogName.font, text: self.label[indexPath.row] ), height: cell.bounds.size.height)
-    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+////        let text = NSAttributedString(string: label[indexPath.row])
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "catalogcell", for: indexPath)
+//            as! CatalogViewCell
+////        cell.CatalogName
+//
+//
+////        let myAttribute = [ NSFontAttributeName: UIFont(name: "Chalkduster", size: 18.0)! ]
+//
+//
+//        return CGSize(width: textWidth(font: cell.CatalogName.font, text: self.label[indexPath.row] ), height: cell.bounds.size.height)
+//    }
     
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -119,12 +138,10 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         print("sss")
     }
     
-    
+
     
 
 
 }
-
-
 
 
