@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C79D7935F090929AEFEEF9E /* Pods_FoodFly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517070FFBD13F8B209539839 /* Pods_FoodFly.framework */; };
+		9B5EA7BA205824E200EE00E4 /* leftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5EA7B9205824E200EE00E4 /* leftMenuViewController.swift */; };
+		9B5EA7BC205825C400EE00E4 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5EA7BB205825C400EE00E4 /* SlideMenuController.swift */; };
+		9B5EA7BE20583B8200EE00E4 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B5EA7BD20583B8200EE00E4 /* 12.png */; };
 		9BFF6CAA20545A6900A91D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF6CA920545A6900A91D22 /* AppDelegate.swift */; };
 		9BFF6CAC20545A6900A91D22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF6CAB20545A6900A91D22 /* ViewController.swift */; };
 		9BFF6CAF20545A6900A91D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BFF6CAD20545A6900A91D22 /* Main.storyboard */; };
@@ -17,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D50777BFB9B3F60A1C680A8 /* Pods-FoodFly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFly/Pods-FoodFly.debug.xcconfig"; sourceTree = "<group>"; };
+		517070FFBD13F8B209539839 /* Pods_FoodFly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B5EA7B9205824E200EE00E4 /* leftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leftMenuViewController.swift; sourceTree = "<group>"; };
+		9B5EA7BB205825C400EE00E4 /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		9B5EA7BD20583B8200EE00E4 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		9BFF6CA620545A6900A91D22 /* FoodFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFF6CA920545A6900A91D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BFF6CAB20545A6900A91D22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +35,7 @@
 		9BFF6CB520545A6900A91D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BFF6CBB205466B200A91D22 /* CatalogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewCell.swift; sourceTree = "<group>"; };
 		9BFF6CBD20547E1500A91D22 /* subViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subViewController.swift; sourceTree = "<group>"; };
+		ACF0CC7044E7DA9DEFE13E2B /* Pods-FoodFly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFly.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFly/Pods-FoodFly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C79D7935F090929AEFEEF9E /* Pods_FoodFly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F061CEA64B3048F0C6B35F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D50777BFB9B3F60A1C680A8 /* Pods-FoodFly.debug.xcconfig */,
+				ACF0CC7044E7DA9DEFE13E2B /* Pods-FoodFly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3C8D19C606E5FDC82BCC2FD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				517070FFBD13F8B209539839 /* Pods_FoodFly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BFF6C9D20545A6900A91D22 = {
 			isa = PBXGroup;
 			children = (
 				9BFF6CA820545A6900A91D22 /* FoodFly */,
 				9BFF6CA720545A6900A91D22 /* Products */,
+				1F061CEA64B3048F0C6B35F6 /* Pods */,
+				3C8D19C606E5FDC82BCC2FD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,9 +90,12 @@
 			children = (
 				9BFF6CA920545A6900A91D22 /* AppDelegate.swift */,
 				9BFF6CBB205466B200A91D22 /* CatalogViewCell.swift */,
+				9B5EA7B9205824E200EE00E4 /* leftMenuViewController.swift */,
+				9B5EA7BB205825C400EE00E4 /* SlideMenuController.swift */,
 				9BFF6CAB20545A6900A91D22 /* ViewController.swift */,
 				9BFF6CBD20547E1500A91D22 /* subViewController.swift */,
 				9BFF6CAD20545A6900A91D22 /* Main.storyboard */,
+				9B5EA7BD20583B8200EE00E4 /* 12.png */,
 				9BFF6CB020545A6900A91D22 /* Assets.xcassets */,
 				9BFF6CB220545A6900A91D22 /* LaunchScreen.storyboard */,
 				9BFF6CB520545A6900A91D22 /* Info.plist */,
@@ -77,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BFF6CB820545A6900A91D22 /* Build configuration list for PBXNativeTarget "FoodFly" */;
 			buildPhases = (
+				D8C96F15BA68B27CD95EEA02 /* [CP] Check Pods Manifest.lock */,
 				9BFF6CA220545A6900A91D22 /* Sources */,
 				9BFF6CA320545A6900A91D22 /* Frameworks */,
 				9BFF6CA420545A6900A91D22 /* Resources */,
+				F8E7AA41E45D6130063D57D8 /* [CP] Embed Pods Frameworks */,
+				7AE0ACA79C1DFD67D64D4568 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5EA7BE20583B8200EE00E4 /* 12.png in Resources */,
 				9BFF6CB420545A6900A91D22 /* LaunchScreen.storyboard in Resources */,
 				9BFF6CB120545A6900A91D22 /* Assets.xcassets in Resources */,
 				9BFF6CAF20545A6900A91D22 /* Main.storyboard in Resources */,
@@ -137,6 +174,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AE0ACA79C1DFD67D64D4568 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodFly/Pods-FoodFly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8C96F15BA68B27CD95EEA02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodFly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8E7AA41E45D6130063D57D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodFly/Pods-FoodFly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodFly/Pods-FoodFly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9BFF6CA220545A6900A91D22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,7 +235,9 @@
 			files = (
 				9BFF6CAC20545A6900A91D22 /* ViewController.swift in Sources */,
 				9BFF6CAA20545A6900A91D22 /* AppDelegate.swift in Sources */,
+				9B5EA7BA205824E200EE00E4 /* leftMenuViewController.swift in Sources */,
 				9BFF6CBC205466B200A91D22 /* CatalogViewCell.swift in Sources */,
+				9B5EA7BC205825C400EE00E4 /* SlideMenuController.swift in Sources */,
 				9BFF6CBE20547E1500A91D22 /* subViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,14 +373,18 @@
 		};
 		9BFF6CB920545A6900A91D22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D50777BFB9B3F60A1C680A8 /* Pods-FoodFly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 55H9PSHCTY;
 				INFOPLIST_FILE = FoodFly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Lee.FoodFly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -295,14 +392,18 @@
 		};
 		9BFF6CBA20545A6900A91D22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACF0CC7044E7DA9DEFE13E2B /* Pods-FoodFly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 55H9PSHCTY;
 				INFOPLIST_FILE = FoodFly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Lee.FoodFly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

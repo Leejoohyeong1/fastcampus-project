@@ -26,13 +26,16 @@ class slideMenuController: SlideMenuController {
     
 
     override func awakeFromNib() {
-        let mainVC = storyboard?.instantiateViewController(withIdentifier: "Main")
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "Main") as! ViewController
         let leftVC = storyboard?.instantiateViewController(withIdentifier: "Left")
         //UIViewControllerにはNavigationBarは無いためUINavigationControllerを生成しています。
-        let navigationController = UINavigationController(rootViewController: mainVC!)
+        let navigationController = UINavigationController(rootViewController: mainVC)
         //ライブラリ特有のプロパティにセット
-  
         
+        
+        
+        mainVC.opacityView = self
+    
         
         
         
@@ -41,9 +44,7 @@ class slideMenuController: SlideMenuController {
         super.awakeFromNib()
     }
     
-    @objc func leftItemAction(){
-        print("우왕")
-    }
+    
     
 
     /*

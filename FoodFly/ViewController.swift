@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UIScrollViewDelegate{
-
+    
     
     @IBOutlet weak var cataLogTitle: UICollectionView!
     
     @IBOutlet weak var menuListScroll: UIScrollView!
     
+    
     var scrollview:CGRect?
     var label: [String] = ["전체","신규맛집","한식","일식","카페","양식","퓨전","분식","햄버거","치킨","중식","피자"]
-
+    var opacityView:slideMenuController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("!111")
-           self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "sssss", style: .plain , target: self, action: nil)
+        
+
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "sssss", style: .plain , target: self, action: #selector(leftItemAction))
         
         
         self.menuListScroll.delegate = self
@@ -33,7 +37,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     
     
     override func viewDidAppear(_ animated: Bool) {
-        print("333333")
+        
         self.menuListScroll.isPagingEnabled = true
         self.menuListScroll.contentSize = CGSize(width: self.menuListScroll.bounds.width * CGFloat(label.count), height: self.menuListScroll.frame.height)
         
@@ -70,16 +74,57 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         let x = CGFloat(indexPath.row) * menuListScroll.frame.size.width
         menuListScroll.setContentOffset(CGPoint(x: x,y :0), animated: true)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let text = NSAttributedString(string: label[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "catalogcell", for: <#T##IndexPath#>)
+            as! CatalogViewCell
+//        cell.CatalogName
+        
+        
+        let myAttribute = [ NSFontAttributeName: UIFont(name: "Chalkduster", size: 18.0)! ]
+        
+        
+        return CGSize(width: textWidth(font: cell.CatalogName.font, text: self.label[indexPath.row] ), height: cell.bounds.size.height)
+    }
     
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("희미")
         let position = scrollView.contentOffset.x / view.frame.size.width
         let indexPath = IndexPath(item: Int(position), section: 0)
         cataLogTitle.scrollToItem(at: indexPath, at: .left, animated: true)
         
     }
     
+    
+    
+
+    func textWidth(font: UIFont, text: String) -> CGFloat {
+        let myText = text as NSString
+        
+        let rect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
+        let labelSize = myText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        return ceil(labelSize.width)
+    }
+ 
+    
+    @objc func leftItemAction(){
+        openLeft()
+          dump(opacityView)
+    }
+    
+    @objc func leftItemAction2() {
+      
+        closeLeft()
+        print("sss")
+    }
+    
+    
+    
 
 
 }
+
+
+
 
